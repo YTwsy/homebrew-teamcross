@@ -1,0 +1,55 @@
+name: Homebrew tap CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: homebrew-tap-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify public Formula and Cask
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Check patch formatting
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [[ -n "$BASE_SHA" && ! "$BASE_SHA" =~ ^0+$ ]] && git cat-file -e "$BASE_SHA^{commit}" 2>/dev/null; then
+            git diff --check "$BASE_SHA...HEAD"
+          else
+            git show --check --format= HEAD
+          fi
+
+      - name: Check Ruby definitions
+        run: |
+          find Formula Casks -name '*.rb' -print0 | xargs -0 -n1 ruby -c
+
+      - name: Compile tap verifier
+        run: python3 -m py_compile scripts/verify-homebrew-tap.py
+
+      - name: Verify public assets and isolated Homebrew installs
+        shell: bash
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "push" ]]; then
+            python3 scripts/verify-homebrew-tap.py --remote
+          else
+            python3 scripts/verify-homebrew-tap.py
+          fi
