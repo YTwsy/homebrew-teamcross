@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "channel": "rc",
+  "version": "0.1.6-rc.2",
+  "tag": "v0.1.6-rc.2",
+  "source": {
+    "repository": "YTwsy/Team-Cross",
+    "commit": "f76cdb1b491224dc7bebf31088b68dac666d1da2"
+  },
+  "architecture": "arm64",
+  "minimumMacOS": "14.0",
+  "developerIDSigned": false,
+  "notarized": false,
+  "artifacts": {
+    "cli": {
+      "name": "teamcross-0.1.6-rc.2-darwin-arm64.tar.gz",
+      "url": "https://github.com/YTwsy/Team-Cross/releases/download/v0.1.6-rc.2/teamcross-0.1.6-rc.2-darwin-arm64.tar.gz",
+      "sha256": "99e9307b096dba5e6bd611ef2adfde783160251cd1037a891781a402ef12182b"
+    },
+    "dmg": {
+      "name": "Team-Cross-0.1.6-rc.2-arm64.dmg",
+      "url": "https://github.com/YTwsy/Team-Cross/releases/download/v0.1.6-rc.2/Team-Cross-0.1.6-rc.2-arm64.dmg",
+      "sha256": "313dc9812382c664c208b3faedae9aeda3700a438c7c336446ae99d36164a45f"
+    }
+  },
+  "definitions": {
+    "formula": "Formula/teamcross-rc.rb",
+    "cask": "Casks/team-cross@rc.rb"
+  }
+}
