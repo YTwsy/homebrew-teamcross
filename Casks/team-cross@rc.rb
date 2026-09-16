@@ -1,7 +1,7 @@
 cask "team-cross@rc" do
-  version "0.1.6-rc.2"
-  sha256 "313dc9812382c664c208b3faedae9aeda3700a438c7c336446ae99d36164a45f"
-  url "https://github.com/YTwsy/Team-Cross/releases/download/v0.1.6-rc.2/Team-Cross-0.1.6-rc.2-arm64.dmg"
+  version "0.1.6-rc.3"
+  sha256 "14e4e15b9ba7b14b7012c686434dee3ac907ad43869c1dfd1475c0f35b441039"
+  url "https://github.com/YTwsy/Team-Cross/releases/download/v0.1.6-rc.3/Team-Cross-0.1.6-rc.3-arm64.dmg"
   name "Team Cross"
   desc "Menu bar companion for native Codex collaboration"
   homepage "https://github.com/YTwsy/Team-Cross"
