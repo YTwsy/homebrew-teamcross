@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "channel": "rc",
-  "version": "0.2.0-rc.1",
-  "tag": "v0.2.0-rc.1",
+  "version": "0.2.1-rc.1",
+  "tag": "v0.2.1-rc.1",
   "source": {
     "repository": "YTwsy/Team-Cross",
-    "commit": "041005326ec17bedc451f455b49972180e79a150"
+    "commit": "fcd164b475452de45089743ba75599aa2186998e"
   },
   "architecture": "arm64",
   "minimumMacOS": "14.0",
@@ -13,14 +13,14 @@
   "notarized": false,
   "artifacts": {
     "cli": {
-      "name": "teamcross-0.2.0-rc.1-darwin-arm64.tar.gz",
-      "url": "https://github.com/YTwsy/Team-Cross/releases/download/v0.2.0-rc.1/teamcross-0.2.0-rc.1-darwin-arm64.tar.gz",
-      "sha256": "5676d3d9fd43ca303db0e0d782a7ee6bbd2518bb1beb27f730b3c3cf65bfe22b"
+      "name": "teamcross-0.2.1-rc.1-darwin-arm64.tar.gz",
+      "url": "https://github.com/YTwsy/Team-Cross/releases/download/v0.2.1-rc.1/teamcross-0.2.1-rc.1-darwin-arm64.tar.gz",
+      "sha256": "47a769070f1da80aaed82e48ab2c427887c5687d23bd3f6b9c23b3e1d31366b3"
     },
     "dmg": {
-      "name": "Team-Cross-0.2.0-rc.1-arm64.dmg",
-      "url": "https://github.com/YTwsy/Team-Cross/releases/download/v0.2.0-rc.1/Team-Cross-0.2.0-rc.1-arm64.dmg",
-      "sha256": "4191dd5e6ae66f43846b7fa94f252c7273d7fb6d2f300a084f8982d46d265681"
+      "name": "Team-Cross-0.2.1-rc.1-arm64.dmg",
+      "url": "https://github.com/YTwsy/Team-Cross/releases/download/v0.2.1-rc.1/Team-Cross-0.2.1-rc.1-arm64.dmg",
+      "sha256": "3e09bce4ff7d4967486df92f67bcbe34375f76a099cb1219cb6b4229802ba05c"
     }
   },
   "definitions": {
