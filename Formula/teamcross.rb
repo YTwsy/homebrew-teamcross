@@ -1,9 +1,9 @@
 class Teamcross < Formula
   desc "Continue a shared native Codex session on macOS"
   homepage "https://github.com/YTwsy/Team-Cross"
-  url "https://github.com/YTwsy/Team-Cross/releases/download/v0.1.1/teamcross-0.1.1-darwin-arm64.tar.gz"
-  version "0.1.1"
-  sha256 "3f0eca5bea41afede97df4170b6181d0833c63d8792f2700068f348625cedad0"
+  url "https://github.com/YTwsy/Team-Cross/releases/download/v0.2.1/teamcross-0.2.1-darwin-arm64.tar.gz"
+  version "0.2.1"
+  sha256 "d0cf952bc6a31f1fb502cd9c727467fd607a991b70bd06f276e514b1951fdd54"
   depends_on :macos => :sonoma
   depends_on arch: :arm64
 
