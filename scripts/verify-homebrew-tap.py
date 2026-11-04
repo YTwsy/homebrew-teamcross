@@ -256,7 +256,10 @@ def verify_install(repository: pathlib.Path, channel: str, expected_cli: bytes, 
     config = CHANNELS[channel]
     other_name = "stable" if channel == "rc" else "rc"
     other = CHANNELS[other_name]
-    with tempfile.TemporaryDirectory(prefix=f"teamcross-tap-{channel}-") as temporary:
+    # System temporary paths remain writable inside Homebrew's sandbox. Its
+    # inherited-sandbox check must be able to reject writes to the brew binary.
+    # Keep the isolated prefix outside those paths without disabling sandboxing.
+    with tempfile.TemporaryDirectory(prefix=f"teamcross-tap-{channel}-", dir=pathlib.Path.home()) as temporary:
         homebrew = IsolatedHomebrew(repository, pathlib.Path(temporary).resolve())
         formula = f'teamcross/install-test/{config["formula_token"]}'
         cask = f'teamcross/install-test/{config["cask_token"]}'
